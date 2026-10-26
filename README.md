@@ -1,26 +1,28 @@
-# Última Señal — Alfa 0.1
+# ÚLTIMA SEÑAL 1.0 — LAS ÚLTIMAS 72 HORAS
 
-PWA de supervivencia narrativa **no oficial**. Prototipo original para jugar en solitario. No incluye ilustraciones, texto narrativo ni tablas reproducidas del manual.
+PWA de rol individual en español, campaña original de supervivencia zombi.
 
 ## Instalación en GitHub Pages
-1. Extrae el ZIP.
-2. Sube **los archivos contenidos en la carpeta** a la raíz de tu repositorio (no la carpeta contenedora).
-3. En GitHub: Settings → Pages → Deploy from a branch → main / (root) → Save.
-4. Visita la URL de Pages por HTTPS. En Android/Chrome abre el menú y selecciona «Instalar aplicación» o «Añadir a pantalla de inicio» cuando esté disponible.
-5. Abre la web una vez con conexión para precargar el modo sin conexión.
+1. **Antes de reemplazar Alfa 0.2**, abre la versión publicada y exporta su JSON desde Respaldo.
+2. Extrae el ZIP y sube **los archivos dentro de `ultima_senal_1_0/`** a la raíz del repositorio `Flesh`, reemplazando los anteriores.
+3. En GitHub: Settings > Pages > Deploy from branch > main > /(root).
+4. Visita https://ragedoninelli.github.io/Flesh/ y verifica que aparezca `1.0 · CAMPAÑA`.
+5. Si persiste la interfaz vieja, cierra todas las pestañas, vuelve a cargar y espera que se actualice el service worker. No borres los datos del sitio sin exportar antes.
+6. Importa el JSON si necesitas recuperar la ficha o el inventario de la Alfa.
 
-## Guardados
-- `localStorage` con clave `ultima_senal_save_v1`, esquema `1`.
-- Exportación JSON e importación validada.
-- Antes de importar se crea copia de la partida anterior con prefijo `ultima_senal_preimport_`.
-- No borres datos del sitio al actualizar. Exporta JSON antes de reemplazar archivos.
-- La disponibilidad del almacenamiento depende del navegador y del dispositivo: exportar regularmente es indispensable.
+## Incluye
+- Campaña original con ocho hitos narrativos y múltiples rutas, desenlace y epílogo.
+- Motor de decisiones, pruebas D10, combate por turnos, heridas, energía, XP, inventario, consumibles y fabricación.
+- Personaje personalizable y asignación de atributos de **reglas originales simplificadas**.
+- Guardado automático, exportación/importación JSON, migración conservadora de Alfa 0.1/0.2 y bitácora TXT.
+- PWA instalable, caché offline y sin dependencias de red.
 
-## Límites deliberados
-- Atributos nombrados pero sin valores ni puntos, hasta revisar reglas oficiales.
-- La prueba D10 del prólogo (6 o más) es una **mecánica narrativa provisional**, no una afirmación sobre Unisystem.
-- No hay combate oficial, heridas, habilidades, poderes, ni campaña extensa todavía.
-- El final del prólogo permite volver a jugar; la campaña extensa se añadirá en versiones futuras.
+## Limitaciones importantes
+- **No es una transcripción ni implementación certificada de Unisystem.** El PDF de referencia está escaneado, sin texto extraíble, y no se ha completado una verificación visual exhaustiva de todas sus reglas. El combate, dificultades, puntos, energía y progresión son reglas originales explícitamente etiquetadas.
+- Las escenas son narrativas preescritas y ramificadas: no hay generación libre de escenas ni Director de Juego IA.
+- La campaña tiene un final definido; no es un mundo abierto infinito.
+- La migración Alfa conserva nombre, concepto, notas seleccionadas, inventario y diario, pero **reinicia el recorrido de campaña**; no puede traducir escenas antiguas 1:1. Los atributos anteriores estaban sin asignación oficial y se inicializan en 1.
+- La aplicación se ha sometido a validación de sintaxis y estructura; falta validación manual exhaustiva en diferentes dispositivos Android.
 
-## Archivos
-`index.html`, `styles.css`, `app.js`, `sw.js`, `manifest.webmanifest`, `icon.svg`, `icon-192.png`, `icon-512.png`.
+## Seguridad de partidas
+Nunca borres los datos de navegación ni desinstales la PWA antes de exportar el respaldo JSON. `localStorage` es local a cada origen y navegador.
